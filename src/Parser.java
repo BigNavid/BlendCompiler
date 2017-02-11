@@ -1,3 +1,4 @@
+import java.io.FileReader;
 import java.util.Stack;
 
 public class Parser 
@@ -5,7 +6,7 @@ public class Parser
 	Scanner scanner;
 	CodeGenerator cg;
 	PTBlock[][] parseTable;
-	Stack<Integer> parseStack = new Stack<Integer>();
+	Stack<Integer> parseStack = new Stack<>();
 	String[] symbols;
 
 	public Parser(String inputFile, String[] symbols, PTBlock[][] parseTable)
@@ -44,7 +45,7 @@ public class Parser
 				{
 	                case PTBlock.ActionType.Error:
 	                    {
-	                        throw new Exception(String.format("Compile Error (" + token + ") at line " + scanner.lineNumber + " @ " + curNode));
+	                        throw new Exception("Compile Error (" + token + ") at line " + scanner.lineNumber + " @ " + curNode);
 	                    }
 					case PTBlock.ActionType.Shift:
 						{
@@ -65,7 +66,7 @@ public class Parser
 						{
 							if (parseStack.size() == 0)
 	                        {
-		                        throw new Exception(String.format("Compile Error (" + token + ") at line " + scanner.lineNumber + " @ " + curNode));
+		                        throw new Exception("Compile Error (" + token + ") at line " + scanner.lineNumber + " @ " + curNode);
 	                        }
 	
 							curNode = parseStack.pop();
@@ -93,7 +94,7 @@ public class Parser
 
 	int nextTokenID()
 	{
-		String t = "";
+		Token t = new Token("", "");
 		try
 		{
 			t = scanner.NextToken();
@@ -106,7 +107,7 @@ public class Parser
 		int i;
 		
 		for (i = 0; i < symbols.length; i++)
-			if (symbols[i].equals(t))
+			if (symbols[i].equals(t.type))
 				return i;
 		(new Exception("Undefined token: " + t)).printStackTrace();
 		return 0;

@@ -1,12 +1,28 @@
-public class Program 
+import java.util.regex.Pattern;
+
+public class Program
 {
 	// Address of PGen output table.
-	public static final String stPath = "";
+	public static final String stPath = "SynGraph/expr_table.npt";
 	
 	public static String inputPath = "";
 	public static String outputPath = "";
 	public static void main(String[] args)
 	{
+		/**
+		///// TEST
+
+		System.out.println(Pattern.matches("[A-Z]|[a-z]", "a"));
+
+
+
+
+		////// END
+		System.exit(0);
+		/**/
+
+
+
 
         if ( args.length != 2)
         {
