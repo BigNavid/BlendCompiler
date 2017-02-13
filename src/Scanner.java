@@ -25,6 +25,13 @@ public class Scanner
 
     Token NextToken() throws Exception
     {
+        // EOF
+        if(ch == '\uFFFF')
+        {
+            return new Token("$", "");
+        }
+
+
         // remainedToken
         if(remainedToken)
         {
@@ -203,7 +210,11 @@ public class Scanner
             else if (ch == ':') {
                 ch = getch();
                 if (ch == ':' || ch == '=')
-                    return new Token(":" + ch, "");
+                {
+                    char c = ch;
+                    ch = getch();
+                    return new Token(":" + c, "");
+                }
                 return new Token(":", "");
             }
 

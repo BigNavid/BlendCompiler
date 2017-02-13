@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 public class Program
 {
 	// Address of PGen output table.
-	public static final String stPath = "SynGraph/expr_table.npt";
+	public static final String stPath = "SynGraph/table.npt";
 	
 	public static String inputPath = "";
 	public static String outputPath = "";
