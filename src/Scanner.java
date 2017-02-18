@@ -25,12 +25,6 @@ public class Scanner
 
     Token NextToken() throws Exception
     {
-        // EOF
-        if(ch == '\uFFFF')
-        {
-            return new Token("$", "");
-        }
-
 
         // remainedToken
         if(remainedToken)
@@ -104,6 +98,13 @@ public class Scanner
             }
             else
                 return new Token("<", "");
+        }
+
+
+        // EOF
+        if(ch == '\uFFFF')
+        {
+            return new Token("$", "");
         }
 
 
@@ -244,8 +245,8 @@ public class Scanner
                 }
         }
 
-
-        return new Token("Error", "wrong token");
+        System.out.println(ch);
+        return new Token("Error", "Wrong token");
     }
 
 

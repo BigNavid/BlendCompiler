@@ -6,4 +6,9 @@ public class Token
         type = t;
         value = v;
     }
+
+    @Override
+    public String toString() {
+        return "\nType: " + type + "\nValue: " + value + "\n";
+    }
 }

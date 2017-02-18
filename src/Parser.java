@@ -109,13 +109,19 @@ public class Parser
 		for (i = 0; i < symbols.length; i++)
 			if (symbols[i].equals(t.type))
 				return i;
-		(new Exception("Undefined token: " + t)).printStackTrace();
+		System.out.println("Error at line " + scanner.lineNumber + ":" + t);
+		System.exit(0);
 		return 0;
 	}
 	
 	public void WriteOutput(String outputFile) // You can change this function, if you think it is not comfortable
 	{
-        	cg.WriteOutput(outputFile);
+		try {
+			cg.WriteOutput(outputFile);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.exit(0);
+		}
 	}
 }
 
