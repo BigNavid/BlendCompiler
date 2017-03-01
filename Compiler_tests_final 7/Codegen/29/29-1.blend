@@ -1,0 +1,20 @@
+-- out
+
+function (void) f(out int a2, int b2)
+{
+    a2 := 12;
+    b2 := 13;
+}
+
+function (int) main()
+{
+    int a := 2;
+    int b := 1;
+
+    f(a, b);
+
+    write(a);
+    write(b);
+
+    int rett := 0; return(rett);
+}

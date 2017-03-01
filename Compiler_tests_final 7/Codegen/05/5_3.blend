@@ -1,0 +1,9 @@
+--type dec test
+function (int) main()
+{
+    long copy;
+    long l := 0x100000000;
+    copy := l;
+    write(copy);
+    int rett := 0; return(rett);
+}

@@ -1,0 +1,13 @@
+-- function call
+
+function (void) f()
+{
+    write("function call\n");
+}
+
+function (int) main()
+{
+    f();
+
+    int rett := 0; return(rett);
+}

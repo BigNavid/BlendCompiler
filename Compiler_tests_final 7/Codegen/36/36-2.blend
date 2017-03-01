@@ -1,0 +1,32 @@
+-- release array
+
+function (int) main()
+{
+    array int arr := [5, 5, 5] assign;
+
+    arr[0, 1, 2] := 12;
+    arr[2, 1, 0] := 21;
+    read(arr[4, 4, 4]);
+
+    write(arr[0, 1, 2]);
+    write(arr[2, 1, 0]);
+    write(arr[4, 4, 4]);
+
+    release arr;
+
+    arr := [3, 10, 6] assign;
+
+    arr[0, 1, 2] := 120;
+    arr[2, 1, 0] := 210;
+    arr[4, 4, 4] := 444;
+    arr[2, 9, 5] := 295;
+
+    write("\n");
+    write(arr[0, 1, 2]);
+    write("\n");
+    write(arr[2, 1, 0]);
+    write("\n");
+    write(arr[4, 4, 4]);
+
+    int rett := 0; return(rett);
+}

@@ -1,0 +1,22 @@
+-- function - recursive
+
+function (void) f(int n)
+{
+    if(n >= 1) {
+        f(n-1);
+    };
+    write(n);
+}
+
+function (int) main()
+{
+    int n;
+    int res;
+    read(n);
+
+    res := f(n);
+
+    write(res);
+
+    int rett := 0; return(rett);
+}

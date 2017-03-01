@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar BlendCompiler.jar $1 $2

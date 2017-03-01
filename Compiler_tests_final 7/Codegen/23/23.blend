@@ -1,0 +1,8 @@
+-- Local variables
+
+function (int) main()
+{
+    int a := 1;
+    write(a);
+    int rett := 0; return(rett);
+}

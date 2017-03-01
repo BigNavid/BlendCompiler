@@ -1,0 +1,10 @@
+function (int) main()
+{
+     int a;
+     read(a);
+     bool b := true;
+     write(a)
+     write("\n");
+     write(b);
+     int rett := 0; return(rett);
+}

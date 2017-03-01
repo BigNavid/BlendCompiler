@@ -1,0 +1,13 @@
+--mul,div int calculation
+function (int) main()
+{
+    string n := "\n";
+    int a := 200;
+    int b := -5;
+    int c := a * b;
+    write (c);
+    write(n);
+    c := a / b;
+    write (c);
+    int rett := 0; return(rett);
+}

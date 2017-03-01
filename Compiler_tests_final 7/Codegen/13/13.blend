@@ -1,0 +1,9 @@
+--char and bool
+function (int) main()
+{
+     char c := 'Z';
+     bool b := true;
+     write(c);
+     write(b);
+     int rett := 0; return(rett);
+}

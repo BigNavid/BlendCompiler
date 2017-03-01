@@ -30,10 +30,8 @@ public class Parser
 		return scanner.lineNumber; // Or any other name you used in your Scanner
 	}
 
-	public void Parse()
+	public void Parse() throws Exception
 	{
-		try
-		{
 			int tokenId = nextTokenID();
 			int curNode = 0;
 			boolean notAccepted = true;
@@ -45,7 +43,7 @@ public class Parser
 				{
 	                case PTBlock.ActionType.Error:
 	                    {
-	                        throw new Exception("Compile Error (" + token + ") at line " + scanner.lineNumber + " @ " + curNode);
+	                        throw new Exception("Unexpected token \"" + token + "\" at line " + scanner.lineNumber);
 	                    }
 					case PTBlock.ActionType.Shift:
 						{
@@ -66,7 +64,7 @@ public class Parser
 						{
 							if (parseStack.size() == 0)
 	                        {
-		                        throw new Exception("Compile Error (" + token + ") at line " + scanner.lineNumber + " @ " + curNode);
+		                        throw new Exception("Unexpected token \"" + token + "\" at line " + scanner.lineNumber);
 	                        }
 	
 							curNode = parseStack.pop();
@@ -85,11 +83,6 @@ public class Parser
 				}
 	        }
 	        cg.FinishCode();
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
 	}
 
 	int nextTokenID()

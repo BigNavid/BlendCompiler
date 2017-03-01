@@ -1,0 +1,11 @@
+-- do-while
+
+function (int) main()
+{
+    int a := 10;
+    do {
+        write("done!\n");
+    } while(a < 10);
+
+    int rett := 0; return(rett);
+}

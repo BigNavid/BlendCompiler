@@ -1,0 +1,30 @@
+--environment implementation
+environment test_environment
+{
+int d1;
+real d2;
+string d3;
+}
+function (int) main()
+{
+    int d1 := 10;
+    real d2 := 53.23;
+    string d3 := "local";
+
+    read(::test_environment.d1);
+    read(::test_environment.d2);
+    read(::test_environment.d3);
+
+    write(d1);
+    write("\n");
+    write(d2);
+    write("\n");
+    write(d3);
+    write("\n");
+    write(::test_environment.d1);
+    write("\n");
+    write(::test_environment.d2);
+    write("\n");
+    write(::test_environment.d3);
+    int rett := 0; return(rett);
+}

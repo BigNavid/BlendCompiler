@@ -1,0 +1,12 @@
+-- while
+
+function (int) main()
+{
+    int a := 0;
+    while(a < 10) {
+        write("done!\n");
+        a := a + 1;
+    };
+
+    int rett := 0; return(rett);
+}

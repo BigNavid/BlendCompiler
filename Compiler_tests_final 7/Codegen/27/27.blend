@@ -1,0 +1,6 @@
+-- main
+
+function (int) main()
+{
+    int rett := 0; return(rett);
+}

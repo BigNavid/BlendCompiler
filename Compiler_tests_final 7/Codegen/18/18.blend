@@ -1,0 +1,18 @@
+--floating point calculation test
+function (int) main()
+{
+     string n := "\n";
+     real d1 := 100.65;
+     real d2 := .952;
+     real d3 := 0.56;
+     real d4;
+     d4 := d2 + d1;
+     write(d4);
+     write(n);
+     d4 := d2 - d3;
+     write(d4);
+     write(n);
+     d4 := d3 * d1;
+     write(d4);
+     int rett := 0; return(rett);
+}

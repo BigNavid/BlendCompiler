@@ -1,0 +1,41 @@
+--type cast test
+function (int) main()
+{
+    int a1;
+    int a2;
+    int a3;
+    int a4;
+    int a5;
+    int a6;
+    int a7;
+    bool x1;
+    int x2;
+    char x4;
+    real x5;
+    int i1;
+    int i2;
+    int i3;
+    char c1;
+
+    x1 := true;
+    x2 := 91;
+    x4 := 'x';
+    x5 := 1.02;
+    a1 := (i1 := x5);
+    a2 := (i2 := x2);
+    a3 := (i2 := x4);
+    a4 := (i3 := x1);
+    a5 := (c1 := x2);
+    a6 := (i1 := 1);
+    a7 := (x1 := true);
+    a8 := (x6 := 1.54);
+    write(a1);
+    write(a2);
+    write(a3);
+    write(a4);
+    write(a5);
+    wrtie(a6);
+    wrtie(a7);
+    wrtie(a8);
+    int rett := 0; return(rett);
+}

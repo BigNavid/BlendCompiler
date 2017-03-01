@@ -1,0 +1,13 @@
+-- Symbol Table - an error should be occured
+
+function (int) main()
+{
+    if(true) {
+        int a;
+        a := 12;
+    };
+
+    write(a);
+
+    int rett := 0; return(rett);
+}

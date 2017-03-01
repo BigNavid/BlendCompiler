@@ -1,0 +1,11 @@
+--string test
+function (int) main()
+{
+     string s := "This is a string!";
+     string n := "\n";
+     int length := strlen(s);
+     write(s);
+     write(n);
+     write(length);
+     int rett := 0; return(rett);
+}

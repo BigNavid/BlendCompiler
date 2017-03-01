@@ -1,0 +1,95 @@
+-- massive
+
+function (int) main()
+{
+    if(true) {
+        if(true) {
+            if(true) {
+                if(true) {
+                    if(true) {
+                        if(true) {
+                            if(true) {
+                                if(true) {
+                                    if(true) {
+                                        if(true) {
+                                            if(true) {
+                                                if(true) {
+                                                    if(true) {
+                                                        if(true) {
+                                                            if(true) {
+                                                                if(true) {
+                                                                    if(true) {
+                                                                        if(true) {
+                                                                            if(true) {
+                                                                                if(true) {
+                                                                                    if(true) {
+                                                                                        if(true) {
+                                                                                            if(true) {
+                                                                                                if(true) {
+                                                                                                    if(true) {
+                                                                                                        if(true) {
+                                                                                                            if(true) {
+                                                                                                                if(true) {
+                                                                                                                    if(true) {
+                                                                                                                        if(true) {
+                                                                                                                            if(true) {
+                                                                                                                                if(true) {
+                                                                                                                                    if(true) {
+                                                                                                                                        if(true) {
+                                                                                                                                            if(true) {
+                                                                                                                                                if(true) {
+                                                                                                                                                    if(true) {
+                                                                                                                                                        if(true) {
+                                                                                                                                                            if(true) {
+                                                                                                                                                                if(true) {
+                                                                                                                                                                    if(true) {
+                                                                                                                                                                        if(true) {
+                                                                                                                                                                            write("I'm here!");
+                                                                                                                                                                        };
+                                                                                                                                                                    };
+                                                                                                                                                                };
+                                                                                                                                                            };
+                                                                                                                                                        };
+                                                                                                                                                    };
+                                                                                                                                                };
+                                                                                                                                            };
+                                                                                                                                        };
+                                                                                                                                    };
+                                                                                                                                };
+                                                                                                                            };
+                                                                                                                        };
+                                                                                                                    };
+                                                                                                                };
+                                                                                                            };
+                                                                                                        };
+                                                                                                    };
+                                                                                                };
+                                                                                            };
+                                                                                        };
+                                                                                    };
+                                                                                };
+                                                                            };
+                                                                        };
+                                                                    };
+                                                                };
+                                                            };
+                                                        };
+                                                    };
+                                                };
+                                            };
+                                        };
+                                    };
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+        };
+    }
+    else {
+        write(":(");
+    };
+
+    int rett := 0; return(rett);
+}

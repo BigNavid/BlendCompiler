@@ -1,0 +1,21 @@
+-- isvoid
+
+structure Str
+{
+    int attr1;
+    int attr2;
+    int attr3;
+}
+
+function (int) main()
+{
+    Str data;
+
+    write(isvoid(data));
+
+    data := assign <1, 2, 3>;
+
+    write(isvoid(data));
+
+    int rett := 0; return(rett);
+}

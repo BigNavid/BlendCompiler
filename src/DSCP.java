@@ -1,8 +1,14 @@
-public class DSCP
+class DSCP
 {
-    public String kind;
-    public DSCP(String k)
+    String kind;
+
+    int var_addr = -1;
+    String var_type = "";
+
+    DSCP(String k)
     {
         kind = k;
     }
+
+
 }

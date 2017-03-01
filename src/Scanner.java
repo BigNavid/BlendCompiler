@@ -3,9 +3,11 @@ import java.util.regex.Pattern;
 
 public class Scanner
 {
+    public static String current_id = "";
     private Character ch;
     int lineNumber = 1;
     private FileReader fr;
+
 
     Scanner(String filename) throws Exception
     {
@@ -25,6 +27,7 @@ public class Scanner
 
     Token NextToken() throws Exception
     {
+        current_id = "";
 
         // remainedToken
         if(remainedToken)
@@ -33,73 +36,65 @@ public class Scanner
             return new Token("-", "");
         }
 
-        // white space
-        if(Pattern.matches("\\s", ch.toString()))
-        {
-            if(ch == '\n')
-                lineNumber ++;
-            while(Pattern.matches("\\s", ch.toString())) {
-                ch = getch();
-                if(ch == '\n')
-                    lineNumber ++;
-            }
-        }
 
-        // one-line comment
-        else if (ch == '-')
-        {
-            ch = getch();
-            if (ch == '-')
-            {
-                while (ch != '\n' && ch != '\r')
+        while(Pattern.matches("\\s", ch.toString()) || ch == '-' || ch == '<') {
+            // white space
+            if (Pattern.matches("\\s", ch.toString())) {
+                if (ch == '\n')
+                    lineNumber++;
+                while (Pattern.matches("\\s", ch.toString())) {
                     ch = getch();
+                    if (ch == '\n')
+                        lineNumber++;
+                }
             }
-            else
-                return new Token("-", "");
-        }
 
-
-        // Multiple-Line comment
-        if(ch == '<')
-        {
-            ch = getch();
-            if(ch == '-')
-            {
+            // one-line comment
+            if (ch == '-') {
                 ch = getch();
-                if(ch == '-') {
-                    boolean done = false;
-                    while (!done)
-                    {
+                if (ch == '-') {
+                    while (ch != '\n' && ch != '\r')
                         ch = getch();
-                        if(ch == '-') {
-                            ch = getch();
-                            if(ch == '-')
-                            {
-                                ch = getch();
-                                if(ch == '>')
-                                    ch = getch();
-                                    done = true;
-                            }
-                        }
+                } else
+                    return new Token("-", "");
+            }
 
+
+            // Multiple-Line comment
+            if (ch == '<') {
+                ch = getch();
+                if (ch == '-') {
+                    ch = getch();
+                    if (ch == '-') {
+                        boolean done = false;
+                        while (!done) {
+                            ch = getch();
+                            if(ch == '\n' || ch == '\r')
+                                lineNumber++;
+                            if (ch == '-') {
+                                ch = getch();
+                                if (ch == '-') {
+                                    ch = getch();
+                                    if (ch == '>')
+                                        ch = getch();
+                                    done = true;
+                                }
+                            }
+
+                        }
+                    } else {
+                        remainedToken = true;
+                        return new Token("<", "");
                     }
                 }
-                else
-                {
-                    remainedToken = true;
+                // <=
+                else if (ch == '=') {
+                    ch = getch();
+                    return new Token("<=", "");
+                } else
                     return new Token("<", "");
-                }
             }
-            // <=
-            else if(ch == '=')
-            {
-                ch = getch();
-                return new Token("<=", "");
-            }
-            else
-                return new Token("<", "");
         }
-
 
         // EOF
         if(ch == '\uFFFF')
@@ -112,7 +107,8 @@ public class Scanner
         else {
             if (Pattern.matches("\\d", ch.toString())) {
                 // HEX
-                if (ch == '0') {
+                if (ch == '0')
+                {
                     ch = getch();
                     if (ch == 'x') {
                         ch = getch();
@@ -123,7 +119,7 @@ public class Scanner
                             ch = getch();
                         }
                         return new Token("CNST_HEX", Long.toString(icv));
-                    } else {
+                    } else if (Pattern.matches("\\d", ch.toString())){
                         return new Token("Error", "0 in beginnig of number");
                     }
                 }
@@ -189,10 +185,13 @@ public class Scanner
                 if (SymbolTable.getSymbol(s) != null) {
                     if (SymbolTable.getSymbol(s).kind.equals("KEYWORD")) {
                         return new Token(s, "");
-                    } else
+                    } else {
+                        current_id = s;
                         return new Token("id", s);
+                    }
                 } else {
                     SymbolTable.addSymbol(s, new DSCP("id"));
+                    current_id = s;
                     return new Token("id", s);
                 }
             }
@@ -223,7 +222,9 @@ public class Scanner
             else if (ch == '>' || ch == '!') {
                 char t = getch();
                 if (t == '=') {
-                    return new Token("" + ch + t, "");
+                    String s = (ch.toString() + t);
+                    ch = getch();
+                    return new Token(s, "");
                 } else {
                     String s = ch.toString();
                     ch = t;

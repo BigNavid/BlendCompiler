@@ -1,0 +1,23 @@
+-- function call - complete
+
+function (int, string, int) f(int a1, string s)
+{
+    a1 := a1 * 2;
+    int b1 := strlen(s);
+    return(a1, s, b1);
+}
+
+function (int) main()
+{
+    int a;
+    int b;
+    string str := "\nHello\n";
+    read(a);
+    (a, str, b) := f(a, str);
+
+    write(a);
+    write(str);
+    write(b);
+
+    int rett := 0; return(rett);
+}

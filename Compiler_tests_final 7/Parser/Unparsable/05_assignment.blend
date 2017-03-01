@@ -1,0 +1,7 @@
+function (int) main()
+{
+    int a;
+    a = 12;
+
+    int rett := 0; return(rett);
+}

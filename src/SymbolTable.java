@@ -23,7 +23,7 @@ public class SymbolTable {
         symbols.put("if", new DSCP("KEYWORD"));
         symbols.put("int", new DSCP("KEYWORD"));
         symbols.put("isvoid", new DSCP("KEYWORD"));
-        symbols.put("lable", new DSCP("KEYWORD"));
+        symbols.put("label", new DSCP("KEYWORD"));
         symbols.put("late", new DSCP("KEYWORD"));
         symbols.put("long", new DSCP("KEYWORD"));
         symbols.put("of", new DSCP("KEYWORD"));
@@ -42,7 +42,7 @@ public class SymbolTable {
 
     public static void addSymbol(String s, DSCP d)
     {
-
+        symbols.put(s, d);
     }
 
     public static DSCP getSymbol(String s)

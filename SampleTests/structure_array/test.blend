@@ -1,0 +1,37 @@
+structure struct
+{
+    bool d1;
+    int a2;
+    char d3;
+    string d4;
+}
+
+function (int) main()
+{
+    struct data;
+    if(isvoid(data)) {
+        write("NULL\n");
+    };
+    data := assign <true,, 'c', "string">;
+
+    array int arr := [3, 4, 5] assign;
+
+    arr[0, 0, 0] := 983;
+    arr[2, 1, 2] := -4;
+
+    write(data.d1);
+    write("\n");
+    write(data.d2);
+    write("\n");
+    write(data.d3);
+    write("\n");
+    write(data.d4);
+    write("\n");
+    write(a[2, 1, 2]);
+
+    release data;
+    release arr;
+
+    int ret := 0;
+    return(ret);
+}

@@ -1,0 +1,11 @@
+--string test_concat
+function (int) main()
+{
+     string s1;
+     string s2;
+     read(s1);
+     read(s2);
+     write(concat(s1, s2));
+     write("\n");
+     int rett := 0; return(rett);
+}

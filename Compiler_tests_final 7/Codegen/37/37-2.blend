@@ -1,0 +1,14 @@
+-- isvoid - array
+
+function (int) main()
+{
+    array int arr;
+
+    write(isvoid(arr));
+
+    arr := [5, 5, 5] assign;
+
+    write(isvoid(arr));
+
+    int rett := 0; return(rett);
+}

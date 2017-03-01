@@ -8,6 +8,13 @@ public class Operand {
         addr_mode = am; type = t; value = v;
     }
 
+    public Operand(String op)
+    {
+        addr_mode = op.split("_")[0] + "_";
+        type = op.split("_")[1] + "_";
+        value = op.split("_")[2];
+    }
+
     @Override
     public String toString() {
         return addr_mode + type + value;

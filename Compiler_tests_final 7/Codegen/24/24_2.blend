@@ -1,0 +1,21 @@
+-- Block - an error should be occured
+
+function (int) main()
+{
+    int b := 0;
+    if(true) {
+        int a;
+        a := 12;
+        b := 2;
+        if(true) {
+            int c;
+        };
+        write(a);
+        write(b);
+    };
+
+    write(b);
+    write(c);
+
+    int rett := 0; return(rett);
+}

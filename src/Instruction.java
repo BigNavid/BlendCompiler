@@ -2,8 +2,7 @@ import com.sun.istack.internal.Nullable;
 
 import java.lang.management.OperatingSystemMXBean;
 
-public class Instruction
-{
+public class Instruction {
     public static final String ADD = "+";
     public static final String SUBTRACT = "-";
     public static final String MULTIPLY = "*";
@@ -66,12 +65,24 @@ public class Instruction
     public Operand operand_3;
 
 
-    public Instruction(String op, Operand o1, @Nullable Operand o2, @Nullable Operand o3)
-    {
-        opcode = op; operand_1 = o1; operand_2 = o2; operand_3 = o3;
+    public Instruction(String op, Operand o1, @Nullable Operand o2, @Nullable Operand o3) {
+        opcode = op;
+        operand_1 = o1;
+        operand_2 = o2;
+        operand_3 = o3;
     }
 
+    public Instruction(String ins)
+    {
+        opcode = ins.split("\\s")[0];
+        operand_1 = new Operand(ins.split("\\s")[1]);
+        operand_2 = new Operand(ins.split("\\s")[2]);
+        operand_3 = new Operand(ins.split("\\s")[3]);
+    }
 
+    public static Instruction get_memory(int size, int addr) {
+        return null;
+    }
 
     @Override
     public String toString() {

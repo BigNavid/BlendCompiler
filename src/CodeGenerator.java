@@ -4,78 +4,117 @@ import java.util.ArrayList;
 
 public class CodeGenerator
 {
-    Scanner scanner; // This was my way of informing CG about Constant Values detected by Scanner, you can do whatever you like
+    // Scanner scanner; // This was my way of informing CG about Constant Values detected by Scanner, you can do whatever you like
 
+    private CG_STATE state = CG_STATE.IDLE;
+    private int sp_top = 1000000;
+    private String var_dcl_type = "";
+    private DSCP assignment_l_dscp;
 
     private ArrayList<Instruction> program = new ArrayList<>();
     private int number_of_ins;
 
-    private Operand o1, o2, o3;
+
+    private Operand o1, o2, o3, A, B, iA, iB;
     private Instruction ins;
 
     public CodeGenerator(Scanner scanner)
     {
-        this.scanner = scanner;
+        //this.scanner = scanner;
         define_registers();
     }
 
     private void define_registers()
     {
         //  Register A
-        o1 = new Operand(Instruction.ADDR_MODE_IMMIDIATE, Instruction.TYPE_INTEGER, "4");
-        o2 = new Operand(Instruction.ADDR_MODE_GLOBAL_DIRECT, Instruction.TYPE_INTEGER, "0");
-        ins = new Instruction(Instruction.GET_MEM ,o1, o2, null);
-        program.add(number_of_ins, ins);
-        number_of_ins ++;
+        A = new Operand("gd_i_0");
+        iA = new Operand("gi_i_0");
 
         // Register B
-        o1 = new Operand(Instruction.ADDR_MODE_IMMIDIATE, Instruction.TYPE_INTEGER, "4");
-        o2 = new Operand(Instruction.ADDR_MODE_GLOBAL_DIRECT, Instruction.TYPE_INTEGER, "4");
-        ins = new Instruction(Instruction.GET_MEM ,o1, o2, null);
-        program.add(number_of_ins, ins);
-        number_of_ins ++;
+        B = new Operand("gd_i_4");
+        iB = new Operand("gi_i_4");
     }
 
     public void Generate(String sem)
     {
-    	System.out.println(sem); // Just for debug
+    	//System.out.println(sem); // Just for debug
     	
         if (sem.equals("NoSem"))
             return;
         else if(sem.equals("@type_int"))
         {
-
+            add_ins(new Instruction(Instruction.DEC_SP, new Operand("im_i_4"), null , null));
+            sp_top -= 4;
+            add_ins(new Instruction(Instruction.GET_SP, A, null, null));
+            add_ins(new Instruction(Instruction.GET_MEM, new Operand("im_i_4"), iA, null));
+            var_dcl_type = "int";
         }
         else if(sem.equals("@type_string"))
         {
-
+            add_ins(new Instruction(Instruction.DEC_SP, new Operand("im_i_4"), null , null));
+            sp_top -= 4;
+            add_ins(new Instruction(Instruction.GET_SP, A, null, null));
+            add_ins(new Instruction(Instruction.GET_MEM, new Operand("im_i_4"), iA, null));
+            var_dcl_type = "string";
         }
         else if(sem.equals("@type_real"))
         {
-
+            add_ins(new Instruction(Instruction.DEC_SP, new Operand("im_i_4"), null , null));
+            sp_top -= 4;
+            add_ins(new Instruction(Instruction.GET_SP, A, null, null));
+            add_ins(new Instruction(Instruction.GET_MEM, new Operand("im_i_4"), iA, null));
+            var_dcl_type = "real";
         }
         else if(sem.equals("@type_char"))
         {
-
+            add_ins(new Instruction(Instruction.DEC_SP, new Operand("im_i_1"), null , null));
+            sp_top -= 1;
+            add_ins(new Instruction(Instruction.GET_SP, A, null, null));
+            add_ins(new Instruction(Instruction.GET_MEM, new Operand("im_i_1"), iA, null));
+            var_dcl_type = "char";
         }
         else if(sem.equals("@type_bool"))
         {
-
-        }
+            add_ins(new Instruction(Instruction.DEC_SP, new Operand("im_i_4"), null , null));
+            sp_top -= 4;
+            add_ins(new Instruction(Instruction.GET_SP, A, null, null));
+            add_ins(new Instruction(Instruction.GET_MEM, new Operand("im_i_4"), iA, null));
+            var_dcl_type = "bool";
+         }
         else if(sem.equals("@type_long"))
+        {
+            add_ins(new Instruction(Instruction.DEC_SP, new Operand("im_i_8"), null , null));
+            sp_top -= 8;
+            add_ins(new Instruction(Instruction.GET_SP, A, null, null));
+            add_ins(new Instruction(Instruction.GET_MEM, new Operand("im_i_8"), iA, null));
+            var_dcl_type = "long";
+        }
+        else if(sem.equals("@var_type"))
+        {
+            DSCP ds = SymbolTable.getSymbol(Scanner.current_id);
+            if(ds.var_addr != -1)
+            {
+                System.out.println("Compile Error: Predefined identifier '" + Scanner.current_id +"'." );
+                System.exit(0);
+            }
+            ds.var_addr = sp_top;
+            ds.var_type = var_dcl_type;
+        }
+        else if(sem.equals("@push_id"))
+        {
+            assignment_l_dscp = SymbolTable.getSymbol(Scanner.current_id);
+        }
+
+
+        // EXPR
+        else if(sem.equals("@cnst_int"))
         {
 
         }
-            /*
-             * else if (sem.equals("SemanticRoutine1"))
-             * {
-             * 	...
-             * }
-             * else if (sem.equals("SemanticRoutine2"))
-             * {
-             * 	...
-             * }
-             */
+        else
+        {
+            return;
+        }
     }
     
     public void FinishCode() // You may need this
@@ -94,4 +133,17 @@ public class CodeGenerator
         bw.flush();
         bw.close();
     }
+
+    private void add_ins(Instruction i)
+    {
+        program.add(number_of_ins, i);
+        number_of_ins++;
+    }
+}
+
+
+enum CG_STATE
+{
+    IDLE,
+    TYPE_INT
 }

@@ -1,0 +1,23 @@
+-- late
+
+function (void) f1(int a, late int b, int c)
+{
+    int res := a * c;
+    return (res);
+}
+
+function (int) f2(int a)
+{
+    write("f2 called!\n");
+    a := 2;
+    return(a);
+}
+
+function (int) main()
+{
+    f1(1, f2(2), 3);
+
+    write("Done!\n");
+
+    int rett := 0; return(rett);
+}

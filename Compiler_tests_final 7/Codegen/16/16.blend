@@ -1,0 +1,9 @@
+--string, concat test
+function (int) main()
+{
+    array char arr := [10] assign;
+    string str = "Hi!";
+    arr := str;
+    write(arr[2]);
+    int rett := 0; return(rett);
+}

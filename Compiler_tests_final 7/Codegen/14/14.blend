@@ -1,0 +1,8 @@
+--real
+function (int) main()
+{
+     real r;
+     r := 2.5731;
+     write(r);
+     int rett := 0; return(rett);
+}

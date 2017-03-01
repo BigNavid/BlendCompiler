@@ -1,0 +1,36 @@
+-- out and late
+
+function (void) f1(out int a, late int b, int c)
+{
+    int res := a * c;
+    a := a - 4;
+    return (res);
+}
+
+function (int) f2(int a)
+{
+    write("f2 called!\n");
+    a := 7;
+    return(a);
+}
+
+function (int) f2(out int a)
+{
+    write("f3 called!\n");
+
+    a := a * 2;
+
+    return(a);
+}
+
+function (int) main()
+{
+    int b := 3;
+    int a := 10;
+    int res := f1(a, f2(2), f3(b));
+
+    write(res);
+    write(a);
+
+    int rett := 0; return(rett);
+}

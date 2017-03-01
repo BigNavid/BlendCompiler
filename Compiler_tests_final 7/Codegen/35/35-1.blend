@@ -1,0 +1,24 @@
+-- allocate
+
+structure Str
+{
+    int attr1;
+    real attr2;
+    string attr3;
+}
+
+function (int) main()
+{
+    Str data;
+    data := assign <1, 2.1, "Bye">;
+
+    read(data.attr3);
+
+    write(data.attr1);
+    write("\n");
+    wrtie(data.attr2);
+    write("\n");
+    write(data.attr3);
+
+    int rett := 0; return(rett);
+}

@@ -1,0 +1,10 @@
+structure my_structure {
+    int a;
+    int b, c;
+    car d;
+}
+
+function (int) main()
+{
+    int rett := 0; return(rett);
+}

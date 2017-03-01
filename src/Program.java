@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileWriter;
 import java.util.regex.Pattern;
 
 public class Program
@@ -9,21 +11,6 @@ public class Program
 	public static String outputPath = "";
 	public static void main(String[] args)
 	{
-		/**
-		///// TEST
-
-		System.out.println(Pattern.matches("[A-Z]|[a-z]", "a"));
-
-
-
-
-		////// END
-		System.exit(0);
-		/**/
-
-
-
-
         if ( args.length != 2)
         {
             System.err.println("Wrong parameters passed.");
@@ -103,6 +90,15 @@ public class Program
         catch (Exception ex)
         {
             System.out.println("Compile Error -> " + ex.getMessage());
+			try {
+				FileWriter f = new FileWriter(new File(inputPath.split("\\.")[0] + ".res"));
+				f.write("0");
+				f.flush();
+			}catch (Exception e)
+			{
+				System.out.println("Cannot write");
+			}
+			System.exit(0);
             return;
         }
 
@@ -115,8 +111,25 @@ public class Program
         catch (Exception ex)
         {
             System.out.println("Compile Error -> " + ex.getMessage());
+			try {
+				FileWriter f = new FileWriter(new File(inputPath.split("\\.")[0] + ".res"));
+				f.write("0");
+				f.flush();
+			}catch (Exception e)
+			{
+				System.out.println("Cannot write");
+			}
+			System.exit(0);
         }
         parser.WriteOutput(outputPath);
+		try {
+			FileWriter f = new FileWriter(new File(inputPath.split("\\.")[0] + ".res"));
+			f.write("1");
+			f.flush();
+		}catch (Exception e)
+		{
+			System.out.println("Cannot write");
+		}
 	}
 
 	static boolean FileExists(String path)
@@ -128,6 +141,8 @@ public class Program
 
 		return b;
 	}
+
+
 
 	// You don't need know about the details of this method
 	static void LoadPT(String stPath, String[] symbols, PTBlock[][] parseTable)

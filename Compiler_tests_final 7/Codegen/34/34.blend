@@ -1,0 +1,17 @@
+-- continue
+
+function (int) main()
+{
+    int i := 0;
+    while(i < 5) {
+        i := i+1;
+
+        if(i = 3) {
+            continue;
+        };
+
+        write(i);
+    };
+
+    int rett := 0; return(rett);
+}

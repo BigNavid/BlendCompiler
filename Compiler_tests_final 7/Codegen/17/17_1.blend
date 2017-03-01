@@ -1,0 +1,9 @@
+--string, concat test
+function (int) main()
+{
+     string s1 := "str";
+     string s2 := "ing!";
+     string total := concat(s1, s2);
+     write(total);
+     int rett := 0; return(rett);
+}

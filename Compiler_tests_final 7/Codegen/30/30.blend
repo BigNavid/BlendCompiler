@@ -1,0 +1,16 @@
+-- function single output
+
+function (int) f()
+{
+    int b := 12;
+    return(b);
+}
+
+function (int) main()
+{
+    int a := f();
+
+    write(a);
+
+    int rett := 0; return(rett);
+}

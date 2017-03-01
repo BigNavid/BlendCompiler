@@ -1,0 +1,5 @@
+function (int) main()
+{
+    write('salam');
+    int rett := 0; return(rett);
+}

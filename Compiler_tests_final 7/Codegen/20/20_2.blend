@@ -1,0 +1,24 @@
+--if else test
+function (int) main()
+{
+     int a := 0;
+     int b;
+     read (b);
+     bool b1 := true;
+     bool b2 := true;
+     bool b3 := false;
+     if ((a&&b1) || ((b > a) && (!b3)))
+     {
+          bool b4 := true;
+          if(b4)
+          {
+               b := 45;
+          };
+          write(b);
+     }
+     else
+     {
+          write ("false");
+     };
+     int rett := 0; return(rett);
+}

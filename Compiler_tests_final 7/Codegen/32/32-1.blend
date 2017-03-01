@@ -1,0 +1,16 @@
+-- Symbol Table
+
+function (int) main()
+{
+    int a := 5;
+
+    if(a = 1) {
+        int a;
+        a := 3;
+        write(a);
+    };
+
+    write(a);
+
+    int rett := 0; return(rett);
+}

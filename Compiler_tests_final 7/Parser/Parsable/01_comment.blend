@@ -1,0 +1,18 @@
+function (int) main()
+{
+
+    int a;
+    read(a);
+    bool b := true;
+    -- a = ;
+    write(a);
+    <-- comments:
+    int b;
+    b := 10;
+    wrtie(b);
+    b := a
+    -->
+    write("\n");
+    write(b);
+    int rett := 0; return(rett);
+}

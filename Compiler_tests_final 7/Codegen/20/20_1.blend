@@ -1,0 +1,28 @@
+--if else test
+function (int) main()
+{
+    int a := 0;
+    int b := 1;
+    bool b1 := true;
+    bool b2 := false;
+    if (b > a)
+    {
+        write("outer if\n");
+        if(b2)
+        {
+            write("inner if\n");
+        }
+        else
+        {
+            write("inner else\n");
+        };
+    }
+    else
+    {
+        write("outer else\n");
+        if(b1) {
+            write("second inner else\n");
+        };
+    };
+    int rett := 0; return(rett);
+}

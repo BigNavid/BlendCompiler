@@ -1,0 +1,28 @@
+--switch case test
+function (int) main()
+{
+     int a := 1;
+     int b := 2;
+     int c := 3;
+     string r := "correct";
+     string w := "wrong";
+     string n := "\n";
+     case a of
+          1: { write(r); }
+          2: { write(w); }
+          3: { write(w); }
+     endcase;
+     write(n);
+     case b of
+          1: { write(w); }
+          2: { write(r); }
+          3: { write(w); }
+     endcase;
+     write(n);
+     case c of
+          1: { write(w); }
+          2: { write(w); }
+          3: { write(r); }
+     endcase;
+     int rett := 0; return(rett);
+}

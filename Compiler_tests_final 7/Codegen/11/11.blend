@@ -1,0 +1,7 @@
+--long
+function (int) main()
+{
+     long a := 0x7FFFFFFFFFFFFFFF;
+     write(a);
+     int rett := 0; return(rett);
+}

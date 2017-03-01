@@ -1,0 +1,19 @@
+--bitwise calculations
+function (int) main()
+{
+     int a := 9;
+     int b := 14;
+     int c := a&b;
+     int d := a|b;
+     int e:=c^d;
+     int f := ~(0xFFFFFFD2);
+     string n := "\n";
+     write(c);
+     write(n);
+     write(d);
+     write(n);
+     write(e);
+     write(n);
+     write(f);
+     int rett := 0; return(rett);
+}

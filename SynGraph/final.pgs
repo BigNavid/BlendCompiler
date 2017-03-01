@@ -367,6 +367,26 @@
         "anchorY": 163.5,
         "isGraph": false,
         "isGlobal": false
+      },
+      {
+        "start": 15,
+        "end": 16,
+        "token": "true",
+        "func": "",
+        "anchorX": 371.0,
+        "anchorY": 256.5,
+        "isGraph": false,
+        "isGlobal": false
+      },
+      {
+        "start": 15,
+        "end": 16,
+        "token": "false",
+        "func": "",
+        "anchorX": 374.0,
+        "anchorY": 293.5,
+        "isGraph": false,
+        "isGlobal": false
       }
     ],
     "start": 15
@@ -1218,7 +1238,7 @@
       {
         "start": 60,
         "end": 61,
-        "token": "\u003d\u003d",
+        "token": "\u003d",
         "func": "",
         "anchorX": 338.5,
         "anchorY": 248.5,
@@ -1336,8 +1356,8 @@
         "end": 64,
         "token": "EXPR",
         "func": "",
-        "anchorX": 466.5,
-        "anchorY": 59.5,
+        "anchorX": 459.5,
+        "anchorY": 46.5,
         "isGraph": true,
         "isGlobal": false
       },
@@ -1346,8 +1366,8 @@
         "end": 64,
         "token": "break",
         "func": "",
-        "anchorX": 467.5,
-        "anchorY": 96.0,
+        "anchorX": 464.5,
+        "anchorY": 82.0,
         "isGraph": false,
         "isGlobal": false
       },
@@ -1357,7 +1377,7 @@
         "token": "continue",
         "func": "",
         "anchorX": 467.5,
-        "anchorY": 126.0,
+        "anchorY": 113.0,
         "isGraph": false,
         "isGlobal": false
       },
@@ -1394,7 +1414,7 @@
       {
         "start": 63,
         "end": 71,
-        "token": "lable",
+        "token": "label",
         "func": "",
         "anchorX": 268.5,
         "anchorY": 450.0,
@@ -1416,8 +1436,28 @@
         "end": 64,
         "token": "VAR_DCL",
         "func": "",
-        "anchorX": 473.0,
-        "anchorY": 23.5,
+        "anchorX": 454.0,
+        "anchorY": 17.5,
+        "isGraph": true,
+        "isGlobal": false
+      },
+      {
+        "start": 63,
+        "end": 64,
+        "token": "LOOP",
+        "func": "",
+        "anchorX": 469.0,
+        "anchorY": 142.5,
+        "isGraph": true,
+        "isGlobal": false
+      },
+      {
+        "start": 63,
+        "end": 64,
+        "token": "CONDITIONAL",
+        "func": "",
+        "anchorX": 471.0,
+        "anchorY": 172.5,
         "isGraph": true,
         "isGlobal": false
       },

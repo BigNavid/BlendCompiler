@@ -1,0 +1,8 @@
+--type cast test
+function (int) main()
+{
+     real x5 := 1.02;
+     int i1 := x5;
+     write(i1);
+     int rett := 0; return(rett);
+}

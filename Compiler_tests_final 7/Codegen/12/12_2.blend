@@ -1,0 +1,9 @@
+--string test_2
+function (int) main()
+{
+     string s;
+     read(s);
+     write(s);
+     write("\n");
+     int rett := 0; return(rett);
+}

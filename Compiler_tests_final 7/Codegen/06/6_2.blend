@@ -1,0 +1,8 @@
+--type cast test
+function (int) main()
+{
+     char x4 := 'x';
+     int i2 := x4;
+     write(i2);
+     int rett := 0; return(rett);
+}

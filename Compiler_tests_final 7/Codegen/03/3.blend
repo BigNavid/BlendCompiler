@@ -1,0 +1,31 @@
+--type structure implementation
+structure test_structure
+{
+bool a1;
+int a2;
+long a3;
+char a4;
+real a5;
+string a6;
+string n;
+}
+function (int) main()
+{
+     test_structure s;
+     s := assign <false,, 0x7FFFFFFFFFFFFFF, 's', 123.123, "This is a string!", "\n">;
+     write(s.a1);
+     write(s.n);
+     write(s.a2);
+     write(s.n);
+     write(s.a3);
+     write(s.n);
+     write(s.a4);
+     write(s.n);
+     write(s.a5);
+     write(s.n);
+     write(s.a6);
+
+     read(s.a2);
+     write(s.a2);
+     int rett := 0; return(rett);
+}

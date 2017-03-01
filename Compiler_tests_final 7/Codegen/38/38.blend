@@ -1,0 +1,30 @@
+-- label
+
+function (int) main()
+{
+    int iter := 0;
+    int a := 0;
+    label l1;
+
+    a := a+1;
+
+    write("Started\n");
+
+    if(iter = 0) {
+        write(a);
+        write("if\n");
+        iter := iter + 1;
+        goto l1;
+    };
+
+    write(a);
+    write("After if\n");
+
+    goto skip;
+    write("Should not be printed!\n");
+    label skip;
+
+    write("end!");
+
+    int rett := 0; return(rett);
+}

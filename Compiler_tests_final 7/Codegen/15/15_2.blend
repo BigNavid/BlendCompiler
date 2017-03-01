@@ -1,0 +1,12 @@
+--arrays test
+function (int) main()
+{
+     array char char_array:= [10] assign;
+     char_array[0] := 10;
+     char_array[2] := 23;
+     int a := char_array[0];
+     write(char_array[2]);
+     write(char_array[0]);
+     write(a);
+     int rett := 0; return(rett);
+}

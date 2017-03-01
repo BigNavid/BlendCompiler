@@ -1,0 +1,8 @@
+-- read and write test
+function (int) main()
+{
+     int x;
+     read(x);
+     write(x);
+     int rett := 0; return(rett);
+}

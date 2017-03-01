@@ -1,0 +1,16 @@
+-- allocate array
+
+function (int) main()
+{
+    array int arr := [5, 5, 5] assign;
+
+    arr[0, 1, 2] := 12;
+    arr[2, 1, 0] := 21;
+    read(arr[4, 4, 4]);
+
+    write(arr[0, 1, 2]);
+    write(arr[2, 1, 0]);
+    write(arr[4, 4, 4]);
+
+    int rett := 0; return(rett);
+}

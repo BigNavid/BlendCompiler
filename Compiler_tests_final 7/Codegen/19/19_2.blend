@@ -1,0 +1,11 @@
+--complex calculation test
+function (int) main()
+{
+    string n := "\n";
+	int i1 := 105;
+	real b1 := 5.63;
+	char a := 'a';
+    int res := ( (i1*b1/a) + (a*b1) ) / 3;
+	write(res);
+	int rett := 0; return(rett);
+}

@@ -1,0 +1,12 @@
+-- Global variables
+
+int a := 1;
+
+function (int) main()
+{
+    write(a);
+    a := a + 1;
+    write(a);
+
+    int rett := 0; return(rett);
+}

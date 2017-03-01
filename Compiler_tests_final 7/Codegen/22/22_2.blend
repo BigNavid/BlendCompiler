@@ -1,0 +1,21 @@
+-- Global variables
+
+int a := 1;
+
+function (void) f() {
+    write(a);
+    a := a + 1;
+    write(a);
+}
+
+function (int) main()
+{
+    write(a);
+    f();
+    write(a);
+    a := 3;
+    f();
+    write(a);
+
+    int rett := 0; return(rett);
+}

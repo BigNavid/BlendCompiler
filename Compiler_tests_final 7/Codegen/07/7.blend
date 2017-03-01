@@ -1,0 +1,13 @@
+--sum,min int calculation
+function (int) main()
+{
+     string n := "\n";
+     int a := 0x11;
+     int b := 15;
+     int c := a + b;
+     write(c);
+     write(n);
+     c := a - b;
+     write(c);
+     int rett := 0; return(rett);
+}

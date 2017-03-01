@@ -1,0 +1,9 @@
+--type dec test
+function (int) main()
+{
+    real copy;
+    real r := 12.1;
+    copy := r;
+    write(copy);
+    int rett := 0; return(rett);
+}

@@ -1,0 +1,9 @@
+--type dec test
+function (int) main()
+{
+    char copy;
+    char c := 's';
+    copy := c;
+    write(copy);
+    int rett := 0; return(rett);
+}
